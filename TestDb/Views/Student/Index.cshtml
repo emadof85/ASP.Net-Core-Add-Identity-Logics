@@ -1,0 +1,36 @@
+﻿@using DataAccess.Models
+@model List<DataAccess.Models.Student>
+<html>
+<head>
+</head>
+<body>
+      <table class="table table-bordered table-striped">
+
+            <thead>
+                  <tr>
+
+                        <th>Id</th>
+                        <th>Student Number</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Age</th>
+                        <th>Phone Number</th>
+                  </tr>
+            </thead>
+            <tbody>
+                  @foreach (Student student in Model)
+                  {
+                        <tr>
+                              <td>@student.Id</td>
+                              <td>@student.StudentNumber</td>
+                              <td>@student.FirstName</td>
+                              <td>@student.LastName</td>
+                              <td>@student.Age</td>
+                              <td>@student.PhoneNumber</td>
+                              <td><a href="/Student/Edit/@student.Id">Edit</a></td>
+                        </tr>
+                  }
+            </tbody>
+      </table>
+</body>
+</html>

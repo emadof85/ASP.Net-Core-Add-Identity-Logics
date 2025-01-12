@@ -1,0 +1,59 @@
+﻿@model DataAccess.Models.Student
+
+
+<form method="post" asp-action="Create" asp-controller="Student">
+       <input type="hidden" asp-for="Id" />
+       <div class="row ">
+              <div class="col col-md-3 col-sm-12">
+                     <label class="text-success text-center">
+                            first name
+                     </label>
+                     <input class="form-control" name="FirstName" asp-for="FirstName" />
+              </div>
+              <div class="col col-md-3 col-sm-12">
+                     <label class="text-success text-center">
+                            last name
+                     </label>
+                     <input class="form-control" name="LastName" asp-for="LastName" />
+              </div>
+              <div class="col col-md-3 col-sm-12">
+                     <label class="text-success text-center">
+                            phone number
+                     </label>
+                     <input class="form-control" name="PhoneNumber" asp-for="PhoneNumber" />
+              </div>
+              <div class="col col-md-3 col-sm-12">
+                     <label class="text-success text-center">
+                            age
+                     </label>
+                     <input class="form-control" name="Age" asp-for="Age" min="0" />
+              </div>
+              <div class="col col-md-3 col-sm-12">
+                     <label class="text-success text-center">
+                            Student Number
+                     </label>
+                     <input class="form-control" name="StudentNumber" asp-for="StudentNumber"/>
+              </div>
+              @if (Model == null)
+                {
+                    <div class="col col-md-3 col-sm-12">
+                         <label class="text-success text-center">
+                                Password
+                         </label>
+                         <input type="password" class="form-control" name="Password" asp-for="Password" />
+                    </div>
+                }
+              
+              <div class="col col-md-3 col-sm-12">
+                     <label class="text-success text-center">
+                            is Active
+                     </label>
+                     <input class="form-check-input" name="IsActive" asp-for="IsActive" type="checkbox" />
+              </div>
+              <div class="row">
+                     <div class="col-md-12 col-sm-12">
+                            <button type="submit">Save</button>
+                     </div>
+              </div>
+       </div>
+</form>

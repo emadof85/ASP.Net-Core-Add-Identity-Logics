@@ -42,6 +42,29 @@ This project demonstrates how to add identity logic to an ASP.Net Core applicati
    dotnet run
    ```
 
+### Running Migrations
+
+1. Edit your connection string in the `appsettings.json` file:
+   ```json
+   {
+     "ConnectionStrings": {
+       "DefaultConnection": "Your_Connection_String_Here"
+     }
+   }
+   ```
+2. Edit your connection string in the `DataAccess/Models/StudentDbContext.cs` file in the `OnConfiguring` function:
+   ```csharp
+   protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+   {
+       optionsBuilder.UseSqlServer("Your_Connection_String_Here");
+   }
+   ```
+3. Update the database with the project migration:
+   ```bash
+   dotnet ef database update
+   ```
+
+
 ### Usage
 
 - Open your browser and navigate to `https://localhost:5001` to access the application.
